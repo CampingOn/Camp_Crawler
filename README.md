@@ -45,7 +45,7 @@ python main.py
 
 ### 4. 결과 확인
 ```sql
-db.camp_site.find().pretty()
+db.camp_info.find().pretty()
 ```
 ![스크린샷 2024-11-30 오후 4 31 21](https://github.com/user-attachments/assets/51c55148-6e36-428c-a656-b09adfab67f1)
 
