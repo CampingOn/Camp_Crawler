@@ -1,0 +1,6 @@
+setuptools==75.6.0
+wheel==0.45.1
+requests
+pymongo
+beautifulsoup4
+python-dotenv
