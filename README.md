@@ -2,13 +2,16 @@
 
 ## 개요
 이 프로젝트는 추천 및 향상된 검색 서비스를 위해  Python을 사용해 공공 API로부터 캠핑장 정보를 가져오고, 해시태그를 크롤링하여 MongoDB에 저장하는 프로그램입니다.
+![스크린샷 2024-11-30 오후 4 29 40](https://github.com/user-attachments/assets/71721a38-7025-41f7-89e1-9668c8f6b51b)
 
+- 공공 API: https://www.data.go.kr/data/15101933/openapi.do
+- 캠핑장 상세 페이지: https://gocamping.or.kr/bsite/camp/info/read.do?c_no=3186
 ## 설치 및 실행 방법
 
 ### 1. 환경 설정
 1. Python 3.8 이상 설치
 2. 가상환경(venv) 설정:
-   ```bash
+   ```bash
    python -m venv venv
    source venv/bin/activate  # Windows의 경우: venv\Scripts\activate
    ```
@@ -32,12 +35,20 @@ DB_PORT=MongoDB 포트 번호
 
 
 ### 3. 실행
-- 각 페이지별로 공공데이터 API를 통해 데이터를 가져옵니다.
-- 캠핑장의 id를 사용해서 상세 페이지를 크롤링 해 해시태그 값을 가져옵니다.
-- MongoDB에 저장합니다.
 ```bash
 python main.py
 ```
+- 각 페이지별로 공공데이터 API를 통해 데이터를 가져옵니다.
+- 캠핑장의 id를 사용해서 상세 페이지를 크롤링 해 해시태그 값을 가져옵니다.
+- MongoDB에 저장합니다.
+
+
+### 4. 결과 확인
+```sql
+db.camp_site.find().pretty()
+```
+![스크린샷 2024-11-30 오후 4 31 21](https://github.com/user-attachments/assets/51c55148-6e36-428c-a656-b09adfab67f1)
+
 
 ## 주요 파일
 - main.py: 프로그램 진입점.
